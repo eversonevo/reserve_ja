@@ -7,7 +7,7 @@ class ImagemLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 60,
+      top: 70,
       left: (Get.width - 192) / 2,
       child: Container(
         width: 192,

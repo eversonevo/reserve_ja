@@ -1,54 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reserve_ja/app/ui/theme_extensions.dart';
 
 class TopoLogin extends StatelessWidget {
   const TopoLogin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    return Stack(
       children: [
-        Stack(
-          children: [
-            Container(
-              width: Get.width,
-              height: 157,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: const Color(0xff989fd8),
-              ),
+        Container(
+          width: Get.width,
+          height: 167,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: context.themeBlue,
+          ),
+        ),
+        const SizedBox(height: 40),
+        const Positioned(
+          top: 30,
+          right: 0,
+          child: Text(
+            "Reserve Já!",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
             ),
-            Material(
-              type: MaterialType.transparency,
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      "Reserve Já!",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      "Concretizando negócios.",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+          ),
+        ),
+        const Positioned(
+          right: 0,
+          top: 45,
+          child: Text(
+            "Concretizando negócios.",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14,
             ),
-          ],
+          ),
         ),
       ],
     );

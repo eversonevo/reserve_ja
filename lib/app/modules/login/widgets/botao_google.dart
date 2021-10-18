@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reserve_ja/app/ui/theme_extensions.dart';
 
 class BotaoGoogle extends StatelessWidget {
   const BotaoGoogle({Key? key}) : super(key: key);
@@ -10,9 +11,11 @@ class BotaoGoogle extends StatelessWidget {
       top: 550,
       left: (Get.width - 325) / 2,
       // ignore: avoid_unnecessary_containers
-      child: SizedBox(
+      child: Container(
+        padding: const EdgeInsets.all(10),
         width: 325,
         height: 58,
+        color: Colors.white,
         child: Row(
           children: [
             Icon(
@@ -22,7 +25,7 @@ class BotaoGoogle extends StatelessWidget {
               semanticLabel: 'Text to announce in accessibility modes',
             ),
             SizedBox(
-              width: 300,
+              width: 280,
               height: 58,
               child: TextButton(
                 onPressed: () {},
@@ -34,7 +37,7 @@ class BotaoGoogle extends StatelessWidget {
                 child: Text(
                   'Acesse com sua conta Google',
                   style: TextStyle(
-                    color: Color(0xff999fd9),
+                    color: context.themeBlue,
                     fontSize: 14,
                   ),
                 ),

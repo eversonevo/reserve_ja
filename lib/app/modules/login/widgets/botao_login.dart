@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reserve_ja/app/ui/theme_extensions.dart';
 
 class BotaoLogin extends StatelessWidget {
   const BotaoLogin({Key? key}) : super(key: key);
@@ -14,9 +15,11 @@ class BotaoLogin extends StatelessWidget {
         width: 175,
         height: 58,
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed('/home');
+          },
           style: TextButton.styleFrom(
-            backgroundColor: const Color(0xff999fd9),
+            backgroundColor: context.themeBlue,
             elevation: 0,
             //shadowColor: Colors.green
           ),

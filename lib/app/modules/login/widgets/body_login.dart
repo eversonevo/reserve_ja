@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:reserve_ja/app/ui/theme_extensions.dart';
 
 class BodyLogin extends StatelessWidget {
-  const BodyLogin({Key? key}) : super(key: key);
+  BodyLogin({required double width, Key? key})
+      : _width = width,
+        super(key: key);
+
+  double _width = Get.width;
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 90,
-      left: (Get.width - 333) / 2,
+      top: 100,
+      left: (_width - _width * .95) / 2,
       child: Container(
-        width: 333,
+        width: _width * .95,
         height: 360,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
@@ -24,19 +29,20 @@ class BodyLogin extends StatelessWidget {
             // ignore: prefer_const_literals_to_create_immutables
             children: [
               const SizedBox(
-                height: 60,
+                height: 90,
               ),
               // ignore: prefer_const_constructors
               Material(
                 // ignore: prefer_const_constructors
                 child: TextField(
-                  autofocus: true,
-                  decoration: const InputDecoration(
+                  autofocus: false,
+                  decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffd0aaaa))),
+                          borderSide:
+                              BorderSide(color: context.themeCinzaTextField)),
                       fillColor: Colors.white,
                       filled: true,
-                      icon: Icon(Icons.person),
+                      icon: const Icon(Icons.person),
                       hintText: 'Login'),
                 ),
               ),
@@ -44,17 +50,19 @@ class BodyLogin extends StatelessWidget {
               Material(
                 // ignore: prefer_const_constructors
                 child: TextField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffd0aaaa))),
+                          borderSide:
+                              BorderSide(color: context.themeCinzaTextField)),
                       fillColor: Colors.white,
                       filled: true,
                       // border: InputBorder.none,
-                      icon: Icon(Icons.password),
+                      icon: const Icon(Icons.password),
+                      suffixIcon: const Icon(Icons.remove_red_eye_sharp),
                       hintText: 'Senha'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Align(
@@ -65,7 +73,7 @@ class BodyLogin extends StatelessWidget {
                     child: Text(
                       "Esqueci a senha",
                       style: TextStyle(
-                        color: Color(0xffd0aaaa),
+                        color: context.themeCinzaTextField,
                         fontSize: 14,
                       ),
                     ),
